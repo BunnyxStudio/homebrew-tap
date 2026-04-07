@@ -1,18 +1,25 @@
 # BunnyxStudio Tap
 
-## How do I install these formulae?
+## Available formulae
 
-`brew install bunnyxstudio/tap/<formula>`
+- `adc`: Read-only CLI for querying App Store Connect sales, finance, reviews, and analytics data
 
-Or `brew tap bunnyxstudio/tap` and then `brew install <formula>`.
+## Install
+
+```bash
+brew tap bunnyxstudio/tap
+brew install adc
+```
+
+Or:
+
+```bash
+brew install bunnyxstudio/tap/adc
+```
 
 Or, in a `brew bundle` `Brewfile`:
 
 ```ruby
 tap "bunnyxstudio/tap"
-brew "<formula>"
+brew "adc"
 ```
-
-## Documentation
-
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
