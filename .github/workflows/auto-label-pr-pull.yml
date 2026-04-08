@@ -1,0 +1,51 @@
+name: auto-label pr-pull
+
+on:
+  workflow_run:
+    workflows: ["brew test-bot"]
+    types: [completed]
+
+jobs:
+  label:
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const prs = context.payload.workflow_run.pull_requests || [];
+            if (prs.length === 0) {
+              core.info("No pull request found on workflow_run payload.");
+              return;
+            }
+
+            const prNumber = prs[0].number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            const { data: pr } = await github.rest.pulls.get({
+              owner,
+              repo,
+              pull_number: prNumber,
+            });
+
+            if (!pr.head?.repo || pr.head.repo.full_name !== `${owner}/${repo}`) {
+              core.info("Skip fork PR.");
+              return;
+            }
+
+            if (pr.labels.some(label => label.name === 'pr-pull')) {
+              core.info("Label pr-pull already exists.");
+              return;
+            }
+
+            await github.rest.issues.addLabels({
+              owner,
+              repo,
+              issue_number: prNumber,
+              labels: ['pr-pull'],
+            });
+            core.info(`Added pr-pull label to PR #${prNumber}.`);
