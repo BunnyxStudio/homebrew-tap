@@ -1,15 +1,14 @@
 class Adc < Formula
   desc "App Store Connect Data CLI for official Apple reporting data"
   homepage "https://github.com/BunnyxStudio/app-store-connect-data-cli"
-  url "https://github.com/BunnyxStudio/app-store-connect-data-cli/archive/refs/tags/v0.1.6.tar.gz"
-  sha256 "9355368c55782529476d63db1c0d6c913f8f47f81739d2d80a2f6d3babaf13a6"
+  url "https://github.com/BunnyxStudio/app-store-connect-data-cli/archive/refs/tags/v0.1.8.tar.gz"
+  sha256 "b2808cbe597fec4849dc32e19ae15093e805c1dcc5f1b9a0dbef051d7dafc7eb"
   license "Apache-2.0"
   revision 1
 
   bottle do
-    root_url "https://github.com/BunnyxStudio/homebrew-tap/releases/download/adc-0.1.6_1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "6dd2e01821d0c9a6e4e27827dbd7b32844a58ac28cab05327fe507b1a37c5af9"
-    sha256 cellar: :any_skip_relocation, sequoia:     "acef493d22f98e8cd6ab0181fb9948a7fa86e795562a8303bf7f8d1b4f4b00c2"
+    root_url "https://github.com/BunnyxStudio/homebrew-tap/releases/download/adc-0.1.8_1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "a5e38d9f4a6d65926a189b07ca2047eb1fbddbc9488f31455b980fdb844aa98b"
   end
   depends_on :macos
 
