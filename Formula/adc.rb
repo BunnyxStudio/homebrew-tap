@@ -4,8 +4,8 @@ class Adc < Formula
   url "https://github.com/BunnyxStudio/app-store-connect-data-cli/archive/refs/tags/v0.1.6.tar.gz"
   sha256 "9355368c55782529476d63db1c0d6c913f8f47f81739d2d80a2f6d3babaf13a6"
   license "Apache-2.0"
-  depends_on :macos
   revision 1
+  depends_on :macos
 
   resource "swift-argument-parser" do
     url "https://github.com/apple/swift-argument-parser/archive/refs/tags/1.5.0.tar.gz"
