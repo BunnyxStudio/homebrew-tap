@@ -4,12 +4,7 @@ class Adc < Formula
   url "https://github.com/BunnyxStudio/app-store-connect-data-cli/archive/refs/tags/v0.1.9.tar.gz"
   sha256 "3d50a2cb27c2e2f33ff1da69969ac2837146566c827b49d49d5b5ee48a90b31d"
   license "Apache-2.0"
-  revision 1
 
-  bottle do
-    root_url "https://github.com/BunnyxStudio/homebrew-tap/releases/download/adc-0.1.8_1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "a5e38d9f4a6d65926a189b07ca2047eb1fbddbc9488f31455b980fdb844aa98b"
-  end
   depends_on :macos
 
   resource "swift-argument-parser" do
