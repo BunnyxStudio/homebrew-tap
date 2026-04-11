@@ -5,6 +5,12 @@ class Adc < Formula
   sha256 "3d50a2cb27c2e2f33ff1da69969ac2837146566c827b49d49d5b5ee48a90b31d"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/BunnyxStudio/homebrew-tap/releases/download/adc-0.1.9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "ab1177d20cd68de5f28a31abc701340840c578a0b208aa75ef27536da5df7ff4"
+    sha256 cellar: :any_skip_relocation, sequoia:     "6404892abaa359a413f8d2d7f8dbe6c1a3a077b52f5f10be189ec90198f1a4b9"
+  end
+
   depends_on :macos
 
   resource "swift-argument-parser" do
